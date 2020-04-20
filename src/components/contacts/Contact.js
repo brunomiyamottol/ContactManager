@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Consumer } from '../../context';
-import axios from 'axios';
-
+import axios from 'axios';  
 class Contact extends Component {
+  
   state = {
     showContactInfo: false
   };
+
+  
 
   onDeleteClick = async (id, dispatch) => {
     try {
@@ -21,6 +23,7 @@ class Contact extends Component {
   render() {
     const { id, name, email, phone } = this.props.contact;
     const { showContactInfo } = this.state;
+   
 
     return (
       <Consumer>
@@ -32,9 +35,7 @@ class Contact extends Component {
                 {name}{' '}
                 <i
                   onClick={() =>
-                    this.setState({
-                      showContactInfo: !this.state.showContactInfo
-                    })
+                    this.setState({showContactInfo: !this.state.showContactInfo})
                   }
                   className="fas fa-sort-down"
                   style={{ cursor: 'pointer' }}

@@ -32,7 +32,8 @@ const reducer = (state, action) => {
   }
 };
 
-export class Provider extends Component {
+
+  export class Provider extends Component {
   state = {
     contacts: [],
     dispatch: action => this.setState(state => reducer(state, action))
